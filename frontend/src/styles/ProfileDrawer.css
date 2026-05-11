@@ -1,0 +1,53 @@
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  padding: 0px;
+  z-index: 1000;
+}
+
+.drawer.open {
+  right: 0;
+}
+
+.drawerHeader {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.drawerProfile {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.drawerImg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.location {
+  color: gray;
+  font-size: 14px;
+}
+
+.drawerMenu {
+  margin-top: 30px;
+}
+
+.drawerMenu div {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.drawerMenu div:hover {
+  background: #f5f5f5;
+}

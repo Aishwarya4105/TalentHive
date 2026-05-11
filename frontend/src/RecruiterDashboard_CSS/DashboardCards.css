@@ -1,0 +1,78 @@
+.Rec-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;   /* ADD THIS */
+}
+
+.Rec-card {
+  background: #1f2937;   /* dark slate */
+  border: 1px solid #374151;
+  border-radius: 14px;
+  padding: 18px 20px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+.Rec-card:hover {
+  transform: translateY(-3px);
+  border-color: #4b5563;
+  background: #232f3e;
+}
+
+ .card-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.blue {
+  color: #3b82f6;
+}
+
+.green {
+  color: #22c55e;
+}
+
+.red {
+  color: #ef4444;
+}
+
+.purple {
+  color: #a855f7;
+}
+
+.Rec-card h4 {
+  font-size: 13px;
+  color: #9ca3af;
+  margin: 0;
+  font-weight: 500;
+}
+
+.Rec-card h2 {
+  font-size: 28px;
+  margin-top: 6px;
+  font-weight: 700;
+  color: #f9fafb;
+}
+
+
+@media (max-width: 600px) {
+  .Rec-card {
+    padding: 16px;
+  }
+
+  .Rec-card h2 {
+    font-size: 24px;
+  }
+
+  .Rec-card h4 {
+    font-size: 12px;
+  }
+
+  .card-icon {
+    font-size: 22px;
+  }
+}
+
+
+

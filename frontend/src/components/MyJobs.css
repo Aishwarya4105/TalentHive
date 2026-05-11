@@ -1,0 +1,40 @@
+.myjobs-container{
+padding:40px;
+background:#f5f6fa;
+min-height:100vh;
+}
+
+.myjobs-container h2{
+margin-bottom:20px;
+}
+
+.job-card{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.buttons{
+margin-top:10px;
+}
+
+.edit{
+background:#00b894;
+color:white;
+border:none;
+padding:6px 15px;
+margin-right:10px;
+border-radius:5px;
+cursor:pointer;
+}
+
+.delete{
+background:#d63031;
+color:white;
+border:none;
+padding:6px 15px;
+border-radius:5px;
+cursor:pointer;
+}

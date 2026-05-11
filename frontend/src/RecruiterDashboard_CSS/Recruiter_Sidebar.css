@@ -1,0 +1,125 @@
+.Rec-sidebar {
+
+  width: 240px;
+  height: calc(100vh - 60px); 
+  background: #0a0f1a;
+  border-right: 1px solid #1f2937;
+
+  position: fixed;   
+  top: 60px;
+  left: 0;
+
+  width: 240px;
+  height: calc(100vh - 60px);
+
+  background: #0a0f1a;
+  border-right: 1px solid #1f2937;
+
+  z-index: 1000;
+
+  padding: 15px 10px;
+
+  transition: 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 15px 10px;
+}
+
+/*  MENU LIST  */
+.Rec-sidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/*  MENU ITEM */
+.Rec-menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 10px 14px;
+  border-radius: 8px;
+
+  text-decoration: none;
+  font-size: 14px;
+  color: #9ca3af;
+  font-weight: 500;
+
+  transition: all 0.2s ease;
+}
+
+/* ICON */
+.icon {
+  font-size: 16px;
+}
+
+/* HOVER */
+.Rec-menu:hover {
+  background: #111827;
+  color: #e5e7eb;
+}
+
+/* ACTIVE (NavLink auto adds active class) */
+.Rec-menu.active {
+  background: #1d4ed8; 
+  color: white;
+  font-weight: 600;
+}
+
+.sidebar-bottom {
+  border-top: 1px solid #1f2937;
+  padding-top: 12px;
+}
+
+.sidebar-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sidebar-profile:hover {
+  background: #111827;
+}
+
+.sidebar-profile img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.sidebar-profile div {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-profile span {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/*  MOBILE */
+@media (max-width: 768px) {
+  .Rec-sidebar {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    height: 100%;
+    z-index: 1000;
+
+    transition: 0.3s;
+  }
+
+  .Rec-sidebar.active {
+    left: 0;
+  }
+}
+
+

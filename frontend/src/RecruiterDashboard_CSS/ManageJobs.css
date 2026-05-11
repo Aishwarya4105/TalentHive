@@ -1,0 +1,116 @@
+.manage-jobs {
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 14px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.manage-jobs h3 {
+  color: #f9fafb;
+  margin-bottom: 16px;
+}
+
+.job-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap; /* important */
+}
+
+.search-input,
+.status-filter {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #374151;
+  background: #111827;
+  color: #fff;
+  outline: none;
+}
+
+.post-btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.post-btn:hover {
+  background: #2563eb;
+}
+
+.jobs-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* prevents squishing */
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.jobs-table th,
+.jobs-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #374151;
+  color: #e5e7eb;
+}
+
+.jobs-table th {
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.status.active {
+  background: rgba(34,197,94,0.2);
+  color: #22c55e;
+}
+
+.status.closed {
+  background: rgba(239,68,68,0.2);
+  color: #ef4444;
+}
+
+.view-btn,
+.delete-btn {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin-right: 6px;
+  font-size: 12px;
+}
+
+.view-btn {
+  background: #3b82f6;
+  color: white;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: white;
+}
+
+@media (max-width: 768px) {
+
+  .job-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .post-btn {
+    width: 100%;
+  }
+
+}

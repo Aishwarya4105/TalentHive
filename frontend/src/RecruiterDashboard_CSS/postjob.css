@@ -1,0 +1,75 @@
+ .post-job-container {
+  width: 100%;
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+
+  
+}
+
+
+.post-job-form {
+  width: 100%;
+ 
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 14px;
+  padding: 24px;
+   max-width: 650px;
+}
+
+.post-job-form h3 {
+  color: #f9fafb;
+  margin-bottom: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.post-job-form input,
+.post-job-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #374151;
+  background: #111827;
+  color: #fff;
+  outline: none;
+}
+
+.post-job-form textarea {
+  margin-top: 12px;
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submit-btn {
+  margin-top: 16px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.submit-btn:hover {
+  background: #2563eb;
+}
+
+@media (max-width: 768px) {
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .post-job-form {
+    padding: 18px;
+  }
+
+}
