@@ -6,7 +6,6 @@ import { FaFileAlt } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { FaCog } from "react-icons/fa";
 
-import CompanyInfo from "./CompanyInfo";
 
 import { NavLink } from "react-router-dom";
 
@@ -22,30 +21,30 @@ function Sidebar({ openSidebar }) {
   to="/recruiter/dashboard" 
   className={({ isActive }) => isActive ? "Rec-menu active" : "Rec-menu"}
 >
-  <FaThLarge className="icon"/> Dashboard
+  <FaThLarge className="rec-icon"/> Dashboard
 </NavLink>
 
 
 
 <NavLink to="/post-job" className="Rec-menu">
- <FaPlus className="icon"/> Post Job
+ <FaPlus className="rec-icon"/> Post Job
 </NavLink>
 
 <NavLink to="/manage-jobs" className="Rec-menu">
 
-  <FaBriefcase className="icon"/> Manage Jobs
+  <FaBriefcase className="rec-icon"/> Manage Jobs
 </NavLink>
 
 <NavLink to="/allapplications" className="Rec-menu">
-  <FaFileAlt className="icon"/> Applications
+  <FaFileAlt className="rec-icon"/> Applications
 </NavLink>
 
 <NavLink to="/recriuterprofile" className="Rec-menu">
-  <FaUser className="icon"/> Profile
+  <FaUser className="rec-icon"/> Profile
 </NavLink>
 
 <NavLink to="/recruiter/settings" className="Rec-menu">
-   <FaCog className="icon"/> Settings
+   <FaCog className="rec-icon"/> Settings
 </NavLink>
 
 </ul>

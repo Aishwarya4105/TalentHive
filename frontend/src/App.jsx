@@ -23,6 +23,8 @@ import RecruiterLayout from "./components/Recruiter_Layout";
 import Companies from "./components/companies";
 import SettingsPage from "./pages/SettingsPage";
 
+import RecruiterSettingsPage from "./pages/RecruiterSettingsPage";
+
 function App() {
   return (
     <>
@@ -50,7 +52,6 @@ function App() {
           <Route path="/recruiter/dashboard" element={<RecruiterDashboard />}></Route>
 
           <Route path="/manage-jobs" element={<RecruiterLayout><ManageJobs /></RecruiterLayout>} />
-          {/* <Route path="/recruiter/manage-jobs" element={<Main_ManageJobs />} /> */}
           <Route path="/post-job" element={< RecruiterLayout><PostJob /></RecruiterLayout>} />
 
 
@@ -64,9 +65,11 @@ function App() {
           <Route path="/applicants/:jobId" element={<ViewApplicants />} />
           <Route path="/allapplications" element={< RecruiterLayout><AllApplications /></RecruiterLayout>} />
 
-          <Route path="/manage-jobs" element={<ManageJobsPage />} />
+          {/* <Route path="/manage-jobs" element={<ManageJobsPage />} /> */}
 
           <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/recruiter/settings" element={<RecruiterSettingsPage />} />
+
 
 
           <Route path="/jobseekerprofile" element={

@@ -1,14 +1,11 @@
 import { useState } from "react";
-import "../styles/dashboard.css";
 import "../RecruiterDashboard_CSS/Recruiter_dashboard.css";
 
 import RecurterNavbar from "./RecurterNavbar";
 import Sidebar from "./Sidebar";
 
 import DashboardCards from "./DashboardCards";
-import Applications from "./Applications";
 import ManageJobs from "./ManageJobsPage";
-import RecentApplicants from "./RecentApplicants";
 import JobsTable from "./JobTable";
 import AllApplications from "./AllApplications";
 
@@ -19,7 +16,7 @@ function RecruiterDashboard() {
     <>
       {/* OVERLAY */}
       {openSidebar && (
-        <div
+        <divs
           className="overlay"
           onClick={() => setOpenSidebar(false)}
         />

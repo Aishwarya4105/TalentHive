@@ -354,6 +354,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  color: white;
 }
 
 .menu-btn {
@@ -445,7 +446,7 @@
 /* STATUS COLORS */
 .status.pending {
   background: rgba(251,191,36,0.2);
-  color: #FACC15;
+  color:white;
 }
 
 .status.shortlisted {
@@ -455,7 +456,7 @@
 
 .status.rejected {
   background: rgba(239,68,68,0.2);
-  color: #EF4444;
+  color: white;
 }
 
 .status.interview {
