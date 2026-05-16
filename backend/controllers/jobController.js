@@ -25,36 +25,88 @@ console.log(req.user);
 
 };
 
+// exports.getJobs = async (req, res) => {
+//   const { page = 1, limit = 5, keyword, location } = req.query;
+
+//   const query = {};
+
+//   if (keyword) {
+//     query.title = { $regex: keyword, $options: "i" };
+//   }
+
+//   if (location) {
+//     query.location = { $regex: location, $options: "i" };
+//   }
+
+//   if (req.user && req.user.role === "employer") {
+//     query.employer_id = req.user.id;
+//   }
+
+//   const jobs = await Job.find(query)
+//     .populate("employer_id", "name email")
+//     .limit(limit * 1)
+//     .skip((page - 1) * limit);
+
+//   const total = await Job.countDocuments(query);
+
+//   res.json({
+//     total,
+//     page: Number(page),
+//     pages: Math.ceil(total / limit),
+//     jobs
+//   });
+// };
+
 exports.getJobs = async (req, res) => {
-  const { page = 1, limit = 5, keyword, location } = req.query;
 
-  const query = {};
+  try {
 
-  if (keyword) {
-    query.title = { $regex: keyword, $options: "i" };
+    const { page = 1, limit = 100, keyword, location } = req.query;
+
+    const query = {};
+
+    // 🔍 Search by title
+    if (keyword) {
+      query.title = { $regex: keyword, $options: "i" };
+    }
+
+    // 📍 Search by location
+    if (location) {
+      query.location = { $regex: location, $options: "i" };
+    }
+
+    // 👤 Recruiter sees only their jobs
+    if (req.user && req.user.role === "employer") {
+      query.employer_id = req.user.id;
+    }
+
+    // ✅ Fetch jobs
+    const jobs = await Job.find(query)
+      .populate("employer_id", "name email")
+      .sort({ createdAt: -1 }) // newest jobs first
+      .limit(Number(limit))
+      .skip((page - 1) * limit);
+
+    // 📊 Total count
+    const total = await Job.countDocuments(query);
+
+    res.json({
+      total,
+      page: Number(page),
+      pages: Math.ceil(total / limit),
+      jobs
+    });
+
+  } catch (error) {
+
+    console.log(error);
+
+    res.status(500).json({
+      message: error.message
+    });
+
   }
 
-  if (location) {
-    query.location = { $regex: location, $options: "i" };
-  }
-
-  if (req.user && req.user.role === "employer") {
-    query.employer_id = req.user.id;
-  }
-
-  const jobs = await Job.find(query)
-    .populate("employer_id", "name email")
-    .limit(limit * 1)
-    .skip((page - 1) * limit);
-
-  const total = await Job.countDocuments(query);
-
-  res.json({
-    total,
-    page: Number(page),
-    pages: Math.ceil(total / limit),
-    jobs
-  });
 };
 
 exports.deleteJob = async (req, res) => {

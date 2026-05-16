@@ -6,18 +6,12 @@ const { getRecruiterApplications } = require("../controllers/applicationControll
 
 router.post("/:jobId", protect, authorizeRoles("job_seeker"), applyJob);
 router.get("/my",protect, getMyApplications);
-router.get(
-  "/recruiter",
-  protect,
-  authorizeRoles("employer"),
-  getRecruiterApplications
-);
+router.get("/recruiter",protect,authorizeRoles("employer"),getRecruiterApplications);
 router.get("/:jobId", protect, authorizeRoles("employer"), viewApplicants);
 
 
 
-router.put(
-  "/status/:id",
+router.put("/status/:id",
   protect,
   authorizeRoles("employer"),
   updateStatus
@@ -27,3 +21,5 @@ router.put(
 
 
 module.exports = router;
+
+
