@@ -6,7 +6,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="navbar">
-      <div className="logo">TalentHive</div>
+      <div className="logo">Talent</div>
       {/* HAMBURGER */}
       <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
         ☰
@@ -40,4 +40,3 @@ function Navbar() {
 }
 
 export default Navbar;
-

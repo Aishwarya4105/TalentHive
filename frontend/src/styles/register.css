@@ -65,3 +65,46 @@
   color: #3b82f6;
   cursor: pointer;
 }
+
+
+.success-message{
+
+  margin-top:18px;
+
+  padding:14px;
+
+  border-radius:12px;
+
+  text-align:center;
+
+  font-size:15px;
+  font-weight:500;
+
+  color:#dcfce7;
+
+  background:
+  rgba(150, 185, 223, 0.15);
+
+  border:
+  1px solid rgba(34,197,94,0.35);
+
+  backdrop-filter:blur(10px);
+
+  animation:fadeIn 0.4s ease;
+}
+
+
+/* ANIMATION */
+
+@keyframes fadeIn{
+
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}

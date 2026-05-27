@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import "../styles/FindJobs.css";
 import axios from "axios";
 
@@ -9,6 +10,12 @@ function FindJobs() {
   const [saved, setSaved] = useState({});
   const [selectedJob, setSelectedJob] = useState(null);
   const [openSearch, setOpenSearch] = useState(false);
+  const locationData = useLocation();
+   const queryParams = new URLSearchParams(locationData.search);
+    const searchKeyword = queryParams.get("keyword");
+    const [applied, setApplied] = useState(false);
+
+    
 
 
 
@@ -19,6 +26,13 @@ function FindJobs() {
       .then((res) => res.json())
       .then((data) => setJobs(data.jobs));
   };
+  useEffect(() => {
+
+  if (searchKeyword) {
+    setKeyword(searchKeyword);
+  }
+
+}, [searchKeyword]);
 
   useEffect(() => {
     fetchJobs();
@@ -68,6 +82,30 @@ function FindJobs() {
 
   }, []);
 
+
+
+  const getDaysAgo = (date) => {
+
+  const created = new Date(date);
+
+  const now = new Date();
+
+  const diffTime = now - created;
+
+  const diffDays = Math.floor(
+    diffTime / (1000 * 60 * 60 * 24)
+  );
+
+  if (diffDays === 0) {
+    return "Today";
+  }
+
+  if (diffDays === 1) {
+    return "1 day ago";
+  }
+
+  return `${diffDays} days ago`;
+};
 
   return (
     <div className="job-container">
@@ -124,7 +162,14 @@ function FindJobs() {
                 </p>
               </div>
 
-              <button className="apply-btn">Apply Now</button>
+              {/* <button className="apply-btn">Apply Now</button> */}
+
+              <button
+  className={`apply-btn ${applied ? "applied" : ""}`}
+  onClick={() => setApplied(true)}
+>
+  {applied ? "Applied" : "Apply Now"}
+</button>
             </div>
 
           </div>
@@ -211,7 +256,9 @@ function FindJobs() {
 
               {/* 🔹 FOOTER */}
               <div className="job-footer">
-                <span className="time">2 days ago</span>
+              <span className="time">
+  {getDaysAgo(job.createdAt)}
+</span>
                 <button onClick={(e) => e.stopPropagation()}>Apply</button>
               </div>
 

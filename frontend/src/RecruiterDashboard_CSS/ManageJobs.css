@@ -1,6 +1,7 @@
 .manage-jobs {
-  background: #1f2937;
-  border: 1px solid #374151;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid #0f59d1;
   border-radius: 14px;
   padding: 20px;
   margin-top: 20px;
@@ -22,9 +23,9 @@
 .status-filter {
   padding: 8px 10px;
   border-radius: 8px;
-  border: 1px solid #374151;
-  background: #111827;
-  color: #fff;
+  border: 1px solid #0e3a81;
+  
+  color: #1748dc;
   outline: none;
 }
 

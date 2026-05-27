@@ -2,7 +2,7 @@
 .navbar1 {
   height: 60px;
   width: 100%;
-  background: #0a0f1a; 
+  background: #0a1d46; 
   border-bottom: 1px solid #1f2937;
 
   display: flex;
@@ -51,7 +51,7 @@
 }
 
 /*NOTIFICATION*/
-.notification1 {
+/* .notification1 {
   position: relative;
   font-size: 18px;
   color: #9ca3af;
@@ -60,7 +60,7 @@
 
 .notification1:hover {
   color: #e5e7eb;
-}
+} */
 
 .badge1 {
   position: absolute;

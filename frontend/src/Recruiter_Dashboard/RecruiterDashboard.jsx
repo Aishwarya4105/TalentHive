@@ -7,7 +7,7 @@ import Sidebar from "./Sidebar";
 import DashboardCards from "./DashboardCards";
 import ManageJobs from "./ManageJobsPage";
 import JobsTable from "./JobTable";
-import AllApplications from "./AllApplications";
+// import AllApplications from "./AllApplications";
 
 function RecruiterDashboard() {
   const [openSidebar, setOpenSidebar] = useState(false);
@@ -33,20 +33,29 @@ function RecruiterDashboard() {
           <RecurterNavbar
             toggleSidebar={() => setOpenSidebar(prev => !prev)}
           />
+          
 
+          
+              
+  
+
+
+          
           {/* CONTENT WRAPPER */}
-          <div className="dashboard-body">
+          <div className="dashboard-body" >
+          
 
             {/* LEFT SECTION */}
             <div className="dashboard-left">
               <DashboardCards />
               <JobsTable showPagination={false} limit={4} />
-              <AllApplications />
+              {/* <AllApplications /> */}
+            </div>
             </div>
           </div>
 
         </div>
-      </div>
+      
     </>
   );
 }

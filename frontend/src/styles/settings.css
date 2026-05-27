@@ -2,6 +2,9 @@
 
 .settings-container{
   margin-top:25px;
+  /* background-image: url('/images/WhatsApp Image 2026-05-23 at 9.47.25 AM.jpeg'); */
+   
+
 }
 
 .settings-menu{
@@ -53,9 +56,9 @@
 
 .settings-panel{
 
-  background:#111827;
+  background:transparent;
 
-  border:1px solid #1E293B;
+  border:1px solid #085bdf;
 
   border-radius:22px;
 
@@ -86,9 +89,9 @@
 
   padding:15px 16px;
 
-  background:#020617;
+  background:transparent;
 
-  border:1px solid #334155;
+  border:1px solid #0c4aa0;
 
   border-radius:14px;
 

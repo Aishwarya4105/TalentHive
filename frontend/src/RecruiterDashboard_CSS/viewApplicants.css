@@ -1,123 +1,193 @@
+/* MAIN PAGE */
 .view-applicants {
-  padding: 20px;
+  padding: 25px;
+  background: transparent;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background-image: url('/images/WhatsApp Image 2026-05-23 at 9.47.25 AM.jpeg');
 }
 
-/* TITLE */
+/* PAGE TITLE */
 .page-title {
-  font-size: 22px;
-  margin-bottom: 20px;
-  color: #f9fafb;
+  font-size: 34px;
+  font-weight: 700;
+  color: #e0e2e9;
+  margin-bottom: 30px;
 }
 
 /* GRID */
 .applicants-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
 /* CARD */
 .applicant-card {
-  background: #1f2937;
-  border: 1px solid #374151;
-  border-radius: 12px;
-  padding: 16px;
-  transition: 0.2s;
+  background: transparent;
+  border-radius: 22px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2px;
+  border: 1px solid #043f98;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease;
 }
 
 .applicant-card:hover {
-  transform: translateY(-3px);
-  border-color: #4b5563;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.12);
 }
 
-/* INFO */
-.applicant-info h3 {
-  margin: 0;
-  color: #fff;
+/* LEFT SECTION */
+.applicant-card h3 {
+  font-size: 23px;
+  color: #dde0e8;
+  margin-bottom: 10px;
 }
 
-.applicant-info p {
-  margin: 4px 0;
-  color: #9ca3af;
-  font-size: 14px;
+.applicant-card p {
+  font-size: 15px;
+  color: #f4f8fd;
+  margin: 8px 0;
+  line-height: 1.6;
+ 
+  padding: 10px;
+}
+
+/* SKILLS STYLE */
+.applicant-card p:nth-child(4) {
+  background: transparent;
+  color: #eff2f8;
+  padding: 10px 14px;
+  
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* RESUME LINK */
+.applicant-card a {
+  text-decoration: none;
+  background: #2563eb;
+  color: white;
+  padding: 9px 18px;
+  border-radius: 10px;
+  margin-left: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.applicant-card a:hover {
+  background: #1d4ed8;
 }
 
 /* STATUS */
 .status {
+
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
   display: inline-block;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  margin-top: 8px;
+ 
+  align-items: center;
 }
 
+/* STATUS COLORS */
 .status.pending {
-  background: #f59e0b;
-  color: #000;
+  background: #fef3c7;
+  color: #b45309;
 }
 
 .status.shortlisted {
-  background: #22c55e;
+  background: #dcfce7;
+  color: #15803d;
 }
 
 .status.rejected {
-  background: #ef4444;
+  background: #fee2e2;
+  color: #dc2626;
+
+
 }
 
 .status.interview {
-  background: #3b82f6;
+  background: #dbeafe;
+  color: #2563eb;
 }
 
 /* BUTTONS */
 .actions {
-  margin-top: 12px;
   display: flex;
-  gap: 8px;
+  gap: 14px;
   flex-wrap: wrap;
+ 
 }
 
+/* COMMON BUTTON */
 .actions button {
   border: none;
-  padding: 6px 10px;
-  border-radius: 6px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 12px;
+  transition: 0.3s ease;
 }
 
-.shortlist {
-  background: #22c55e;
+/* SHORTLIST */
+.actions button:nth-child(1) {
+  background: #16a34a;
   color: white;
+  flex-direction: column;
 }
 
-.reject {
+.actions button:nth-child(1):hover {
+  background: #15803d;
+}
+
+/* REJECT */
+.actions button:nth-child(2) {
   background: #ef4444;
   color: white;
 }
 
-.interview {
-  background: #3b82f6;
+.actions button:nth-child(2):hover {
+  background: #dc2626;
+}
+
+/* INTERVIEW */
+.actions button:nth-child(3) {
+  background: #f59e0b;
   color: white;
 }
 
-.actions button:hover {
-  opacity: 0.85;
+.actions button:nth-child(3):hover {
+  background: #d97706;
 }
 
-.applicant-details {
-  margin-top: 10px;
-  font-size: 13px;
-  color: #d1d5db;
-}
+/* MOBILE */
+@media (max-width: 900px) {
 
-.applicant-details p {
-  margin: 4px 0;
-}
+  .applicant-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-.applicant-details a {
-  color: #3b82f6;
-  text-decoration: none;
-}
+  .actions {
+    width: 100%;
+    flex-direction: column;
+  }
 
-.applicant-details a:hover {
-  text-decoration: underline;
+  .actions button {
+    width: 100%;
+  }
+
+  .page-title {
+    font-size: 28px;
+  }
 }

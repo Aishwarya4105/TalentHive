@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/register.css";
 
 function Register() {
+  const [success, setSuccess] = useState(false);
 
   const navigate = useNavigate();
 
@@ -10,7 +11,7 @@ function Register() {
     name: "",
     email: "",
     password: "",
-    role: "user"
+  role: "job_seeker"
   });
 
   const handleChange = (e) => {
@@ -20,41 +21,91 @@ function Register() {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // console.log(formData);
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   // console.log(formData);
 
-    try {
-      const res = await fetch("http://localhost:5000/api/auth/register", {
+  //   try {
+  //     const res = await fetch("http://localhost:5000/api/auth/register", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
+
+  //     const data = await res.json();
+
+  //     console.log(data);
+  //   setSuccess(true);
+  //     setFormData({
+  //       name: "",
+  //       email: "",
+  //       password: "",
+  //       role: "job_seeker",
+  //     });
+
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+
+  const handleSubmit = async (e) => {
+
+  e.preventDefault();
+
+  try {
+
+    const res = await fetch(
+      "http://localhost:5000/api/auth/register",
+      {
         method: "POST",
+
         headers: {
           "Content-Type": "application/json",
         },
+
         body: JSON.stringify(formData),
-      });
+      }
+    );
 
-      const data = await res.json();
+    /* CHECK RESPONSE */
 
-      console.log(data);
+    if (!res.ok) {
 
-      setFormData({
-        name: "",
-        email: "",
-        password: "",
-        role: "job_seeker",
-      });
+      throw new Error("Registration failed");
 
-    } catch (error) {
-      console.log(error);
     }
-  };
+
+    const data = await res.json();
+
+    console.log(data);
+
+    setSuccess(true);
+
+    setFormData({
+      name: "",
+      email: "",
+      password: "",
+      role: "job_seeker",
+    });
+
+  } catch (error) {
+
+    console.log(error);
+
+    alert("Registration Failed ❌");
+
+  }
+};
   return (
 
 
     <div className="auth-container">
       <div className="auth-card">
 
-        <h1 className="logo">Talent<span>Hive</span></h1>
+        <h1 className="logo">Talent</h1>
         <h2>Create Account</h2>
         <p className="subtitle">Join TalentHive today</p>
 
@@ -95,6 +146,14 @@ function Register() {
           <button type="submit" className="auth-btn">
             Register
           </button>
+
+          {
+  success && (
+    <div className="success-message">
+      Successfully Registered 🎉
+    </div>
+  )
+}
 
         </form>
 

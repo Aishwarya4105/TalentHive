@@ -43,7 +43,7 @@ function JobseekerSidebar({ openSidebar, toggleSidebar }) {
 
       <div className={`Jobseekersidebar ${openSidebar ? "active" : ""}`}>
 
-        <h2 className="logo">Job Seeker</h2>
+        <h2 className="logo">Talent</h2>
 
         <ul>
           <li>

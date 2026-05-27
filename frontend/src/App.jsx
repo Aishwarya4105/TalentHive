@@ -15,13 +15,14 @@ import Applications from "./JobSeekerDashboaerd/Applications";
 import ProfileCompletion from "./JobSeekerDashboaerd/ProfileCompletion";
 import RecruiterProfile from "./Recruiter_Dashboard/RecruiterProfile";
 import ViewApplicants from "./Recruiter_Dashboard/viewApplicants";
-import AllApplications from "./Recruiter_Dashboard/AllApplications";
+// import AllApplications from "./Recruiter_Dashboard/AllApplications";
 import Navbar from "./components/Navbar";
 import Layout from "./components/Layout";
 import LoginSuccess from "./pages/Loginsucess";
 import RecruiterLayout from "./components/Recruiter_Layout";
 import Companies from "./components/companies";
 import SettingsPage from "./pages/SettingsPage";
+
 
 import RecruiterSettingsPage from "./pages/RecruiterSettingsPage";
 
@@ -63,7 +64,7 @@ function App() {
           <Route path="/applications" element={<Applications />} />
 
           <Route path="/applicants/:jobId" element={<ViewApplicants />} />
-          <Route path="/allapplications" element={< RecruiterLayout><AllApplications /></RecruiterLayout>} />
+          {/* <Route path="/allapplications" element={< RecruiterLayout><AllApplications /></RecruiterLayout>} /> */}
 
           {/* <Route path="/manage-jobs" element={<ManageJobsPage />} /> */}
 
@@ -90,12 +91,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-

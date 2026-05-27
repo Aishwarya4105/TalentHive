@@ -53,7 +53,7 @@ function Login() {
       <div className="login-card">
 
         {/* LOGO */}
-        <h1 className="logo">Talent<span>Hive</span></h1>
+        <h1 className="logo">Talent</h1>
 
         <h2>Sign in</h2>
         <p className="sub">Access your account</p>

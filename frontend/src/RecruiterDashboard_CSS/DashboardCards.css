@@ -2,12 +2,62 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  width: 100%;   /* ADD THIS */
+  width: 100%; 
+  
+    /* ADD THIS */
 }
 
 .Rec-card {
-  background: #1f2937;   /* dark slate */
-  border: 1px solid #374151;
+  background: transparent;
+
+  border: 1px solid #094ba6;
+
+  border-radius: 18px;
+
+  padding: 22px;
+
+  color: white;
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition: all 0.3s ease;
+
+  box-shadow:
+    0 4px 20px rgba(0,0,0,0.35);
+}
+
+.Rec-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #6366F1;
+
+  box-shadow:
+    0 10px 30px rgba(99,102,241,0.25);
+}
+
+.Rec-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: -50px;
+  right: -50px;
+
+  width: 120px;
+  height: 120px;
+
+  background: rgba(99,102,241,0.08);
+
+  border-radius: 50%;
+}
+
+
+/*.Rec-card {
+  
+  /* dark slate 
+  border: 1px solid #1860d3;
   border-radius: 14px;
   padding: 18px 20px;
   transition: all 0.25s ease;
@@ -17,7 +67,7 @@
   transform: translateY(-3px);
   border-color: #4b5563;
   background: #232f3e;
-}
+}*/
 
  .card-icon {
   font-size: 24px;
@@ -73,6 +123,3 @@
     font-size: 22px;
   }
 }
-
-
-

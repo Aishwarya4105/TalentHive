@@ -35,9 +35,9 @@ function Sidebar({ openSidebar }) {
   <FaBriefcase className="rec-icon"/> Manage Jobs
 </NavLink>
 
-<NavLink to="/allapplications" className="Rec-menu">
+{/* <NavLink to="/allapplications" className="Rec-menu">
   <FaFileAlt className="rec-icon"/> Applications
-</NavLink>
+</NavLink> */}
 
 <NavLink to="/recriuterprofile" className="Rec-menu">
   <FaUser className="rec-icon"/> Profile

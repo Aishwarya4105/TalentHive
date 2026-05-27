@@ -77,22 +77,21 @@ function ViewApplicants() {
               <h3>{app.applicant?.name}</h3>
               <p>{app.applicant?.email}</p>
 
-              <p>
-                Experience: {app.applicant?.experience || "N/A"}
-              </p>
-
-              <p>
-                Skills: {app.applicant?.skills?.join(", ") || "N/A"}
-              </p>
-
-              <p>
-                Resume:
-                {app.applicant?.resume ? (
-                  <a href={app.applicant.resume} target="_blank">
-                    View
-                  </a>
-                ) : " N/A"}
-              </p>
+          
+             <p>
+  Resume:
+  {app.applicant?.resume ? (
+    <a
+      href={`http://localhost:5000/${app.applicant.resume}`}
+      target="_blank"
+      rel="noreferrer"
+    >
+      View
+    </a>
+  ) : (
+    " N/A"
+  )}
+</p>
 
               <span className={`status ${app.status}`}>
                 {app.status}

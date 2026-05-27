@@ -58,19 +58,19 @@ function RecurterNavbar({ toggleSidebar }) {
       {/* LEFT SIDE */}
       <div className="navbar-left1">
         <span className="menu-btn" onClick={toggleSidebar}>☰</span>
-        <h2 className="logo1">JobPortal</h2>
+        <h2 className="logo">Talent</h2>
         <span className="divider1">|</span>
-        <h3 className="dashboard-title1">Recruiter Dashboard</h3>
+        <h2 className="dashboard-title1">Recruiter Dashboard</h2>
       </div>
 
       {/* RIGHT SIDE */}
       <div className="navbar-right1">
 
         {/* NOTIFICATION */}
-        <div className="notification1">
+        {/* <div className="notification1">
           <FaBell />
           <span className="badge1">1</span>
-        </div>
+        </div> */}
 
         {/* PROFILE */}
         <div className="profile-section1" onClick={() => setOpen(!open)}>
@@ -111,7 +111,7 @@ function RecurterNavbar({ toggleSidebar }) {
       Company Profile
     </p>
 
-    <p onClick={() => navigate("/settings")}>
+    <p onClick={() => navigate("/recruiter/settings")}>
       Settings
     </p>
 

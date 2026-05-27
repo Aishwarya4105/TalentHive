@@ -1,5 +1,25 @@
 .job-container {
   padding: 35px;
+   background-size: 110%;
+   background-position: center;
+
+   animation: heroMove 35s ease-in-out infinite alternate;
+  
+  background-image: url('/images/WhatsApp Image 2026-05-23 at 9.47.25 AM.jpeg');
+}
+@keyframes heroMove{
+
+  0%{
+    background-position: left top;
+  }
+
+  50%{
+    background-position: center center;
+  }
+
+  100%{
+    background-position: right bottom;
+  }
 }
 .job-container h2{
   padding-bottom: 20px;
@@ -26,9 +46,9 @@
   padding: 0 14px;
 
   border-radius: 12px;
-  border: 1px solid #1f2937;
+  border: 1px solid #0455c6;
 
-  background: #020617;
+  background: transparent;
   color: white;
 
   font-size: 14px;
@@ -47,6 +67,7 @@
   font-weight: 500;
 
   cursor: pointer;
+  margin-top: 11px;
 }
 
 /*  MOBILE FIX  */
@@ -79,9 +100,9 @@
   position: relative;
   padding: 20px;
   border-radius: 18px;
-  background: rgba(30, 41, 59, 0.6);
+  background: transparent;
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid blue;
   transition: all 0.35s ease;
   overflow: hidden;
 }
@@ -320,6 +341,15 @@
 
   cursor: pointer;
 }
+.apply-btn.applied{
+
+  background:
+  linear-gradient(
+    135deg,
+    #16A34A,
+    #22C55E
+  );
+}
 
 /*  ANIMATIONS */
 @keyframes fadeIn {
@@ -517,4 +547,3 @@
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
-

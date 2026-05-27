@@ -1,9 +1,11 @@
  .post-job-container {
   width: 100%;
   padding: 20px;
-
+border: 1px solid #2563eb;
   display: flex;
   justify-content: center;
+  background: transparent;
+   
 
   
 }
@@ -12,10 +14,10 @@
 .post-job-form {
   width: 100%;
  
-  background: #1f2937;
-  border: 1px solid #374151;
+  border: 1px soild #0305a925;
+  
   border-radius: 14px;
-  padding: 24px;
+  padding: 14pxpx;
    max-width: 650px;
 }
 
@@ -35,8 +37,8 @@
   width: 100%;
   padding: 10px;
   border-radius: 8px;
-  border: 1px solid #374151;
-  background: #111827;
+  border: 1px solid #0845a8;
+  background: transparent;
   color: #fff;
   outline: none;
 }
